@@ -51,6 +51,9 @@ emallocz(size_t size) {
 
 void
 run(void) {
+	for(int scr=0;scr < ScreenCount(dpy); scr++) {
+		XUngrabButton(dpy, AnyButton, AnyModifier, RootWindow (dpy, scr));
+	}
 
 	for(int scr=0;scr < ScreenCount(dpy); scr++) {
 		XGrabButton(dpy, button, AnyModifier, RootWindow(dpy, scr),
@@ -64,10 +67,6 @@ run(void) {
 		if(ev.xbutton.button == button && ev.xbutton.type == btype) {
 			spawn();
 		}
-	}
-
-	for(int scr=0;scr < ScreenCount(dpy); scr++) {
-		XUngrabButton(dpy, AnyButton, AnyModifier, RootWindow (dpy, scr));
 	}
 }
 
