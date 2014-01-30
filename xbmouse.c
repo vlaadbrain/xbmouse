@@ -24,7 +24,7 @@ static void usage(void);
 char *argv0;
 static Display *dpy;
 static unsigned int button = 0;
-static int btype = ButtonRelease;
+static int btype = ButtonPress;
 static char **cmd = NULL;
 
 #define PING_TIMEOUT 300
@@ -107,7 +107,7 @@ spawn(void) {
 
 void
 usage(void) {
-	die("usage: %s [-vpr] [-b <button#> command ...]\n", basename(argv0));
+	die("usage: %s [-vr] [-b <button#> command ...]\n", basename(argv0));
 }
 
 int
@@ -115,9 +115,6 @@ main(int argc, char *argv[]) {
 	ARGBEGIN {
 		case 'b':
 			button = atoi(EARGF(usage()));
-			break;
-		case 'p':
-			btype = ButtonPress;
 			break;
 		case 'r':
 			btype = ButtonRelease;
