@@ -3,8 +3,11 @@
 xbmouse \- bind mouse button to a command
 .SH SYNOPSIS
 .B xbmouse 
-.RB [ \-b <button#> ] command ...
-.RB [ \-vr ]
+.RB [ \-b 
+.IR button# ]
+.RB [ \-v ]
+.RB [ \-r ]
+.IR [ command ... ]
 .SH DESCRIPTION
 .B xbmouse
 Listens for ButtonPress events from a specific mouse button number and
@@ -13,13 +16,15 @@ number would suffice do.  The mouse button no longer works for other
 apps until xbmouse exits.
 .SH OPTIONS
 .TP
-.B \-b <button#>
+.B \-b " button#"
 .TP
 .B \-r
 execute on ButtonRelease instead
 .TP
 .B \-v
 show version information
+.SH EXAMPLES
+$ xbmouse -b 8 xkev -c -e h
 .SH AUTHORS
 See the LICENSE file for the authors.
 .SH LICENSE
