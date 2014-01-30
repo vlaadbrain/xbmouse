@@ -1,0 +1,31 @@
+.TH XBMOUSE 1 xbmouse\-VERSION
+.SH NAME
+xbmouse \- bind mouse button to a command
+.SH SYNOPSIS
+.B xbmouse 
+.RB [ \-b <button#> ] command ...
+.RB [ \-vr ]
+.SH DESCRIPTION
+.B xbmouse
+Listens for ButtonPress events from a specific mouse button number and
+invokes command. Any mouse connected to the Display with that button
+number would suffice do.  The mouse button no longer works for other 
+apps until xbmouse exits.
+.SH OPTIONS
+.TP
+.B \-b <button#>
+.TP
+.B \-r
+execute on ButtonRelease instead
+.TP
+.B \-v
+show version information
+.SH AUTHORS
+See the LICENSE file for the authors.
+.SH LICENSE
+See the LICENSE file for the terms of redistribution.
+.SH SEE ALSO
+.BR xkev (1)
+.SH BUGS
+Please report them.
+
